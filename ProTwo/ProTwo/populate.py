@@ -1,5 +1,5 @@
 import os 
-os.environ.setdefautl('DJANGO_SETTINGS_MODULE','ProTwo.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE','ProTwo.settings')
 
 import django
 django.setup()
@@ -36,3 +36,7 @@ def populate(N=5):
 		#create a fake access record for that webpage
 		acc_rec = AccessRecord.objects.get_or_create(name=webpg,date=fake_date)[0]
 
+if __name__ == '__main__': 
+	print("populating script!")
+	populate(20)
+	print("populating complete!")
